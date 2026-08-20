@@ -57,7 +57,7 @@
     ? `${lead.short}: ${mln(lead.revenue)}`
     : "Менеджеры";
   document.getElementById("a-mgr-p").textContent = lead
-    ? `${lead.short} — ${money(lead.clients)} клиентов, ${money(lead.docs)} отгрузок, ${Math.round((lead.revenue / K.revenue) * 100)}% выручки склада. Зал (Чащина, Важенина и др.) — ещё ${mln(floorRev)}.`
+    ? `${lead.short} — ${money(lead.clients)} клиентов, ${money(lead.docs)} отгрузок, ${Math.round((lead.revenue / K.revenue) * 100)}% выручки склада. Зал (Важенина и др.) — ещё ${mln(floorRev)}.`
     : "";
 
   const y24 = R.years.find((y) => y.year === "2024");
