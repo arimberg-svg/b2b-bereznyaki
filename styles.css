@@ -441,7 +441,7 @@ tr.silent { background: #fffdf5; }
 }
 
 @media (max-width: 960px) {
-  .answers, .stats, .mgr-cards, .month-grid, .actions { grid-template-columns: 1fr 1fr; }
+  .answers, .stats, .mgr-cards, .month-grid, .actions, .plan-stats { grid-template-columns: 1fr 1fr; }
 }
 
 .actions {
@@ -472,6 +472,19 @@ tr.silent { background: #fffdf5; }
 
 .action p { margin: 0; color: var(--muted); font-weight: 600; font-size: 14px; }
 .action .hint { margin-top: 10px; color: var(--text); font-size: 13px; }
+.action .script {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.plan-stats { grid-template-columns: repeat(4, 1fr); }
 
 .banner {
   background: var(--warn-bg);
@@ -510,7 +523,7 @@ tr.silent { background: #fffdf5; }
 
 @media (max-width: 720px) {
   .brand-tag { display: none; }
-  .answers, .stats, .mgr-cards, .month-grid, .actions { grid-template-columns: 1fr; }
+  .answers, .stats, .mgr-cards, .month-grid, .actions, .plan-stats { grid-template-columns: 1fr; }
   .toolbar { flex-direction: column; align-items: stretch; }
   .toc { top: 56px; }
   .chart-box, .chart-box.short { height: 260px; }
