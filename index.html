@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B2B Березняки — клиенты, чек, менеджеры</title>
+  <meta name="description" content="Отчёт магазина №11 Березняки: пропавшие клиенты, средний чек, продажи менеджеров, топовые и упадочные месяцы." />
+  <meta name="theme-color" content="#4208a8" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#">
+        <img class="brand-logo" src="assets/logo.png" alt="У Михалыча" />
+        <span class="brand-tag">B2B · Березняки</span>
+      </a>
+      <span class="chip" id="as-of">Общая ссылка</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Магазин №11 · п. Березняковский, Омутинская 26а</p>
+      <h1>Клиентов потеряли. <span>Средний чек не упал.</span></h1>
+      <p class="lede" id="lede">Реализации 1С по складу Березняков, январь 2024 — август 2026.</p>
+    </section>
+
+    <div class="answers">
+      <article class="answer bad">
+        <p class="kicker">Пропавшие клиенты</p>
+        <h2 id="a-lost">Считаем…</h2>
+        <p id="a-lost-p"></p>
+      </article>
+      <article class="answer ok">
+        <p class="kicker">Средний чек</p>
+        <h2 id="a-check">Считаем…</h2>
+        <p id="a-check-p"></p>
+      </article>
+      <article class="answer">
+        <p class="kicker">Кто продаёт</p>
+        <h2 id="a-mgr">Считаем…</h2>
+        <p id="a-mgr-p"></p>
+      </article>
+    </div>
+
+    <div class="stats" id="stats"></div>
+
+    <nav class="toc" aria-label="Разделы">
+      <a href="#vyvody">Выводы и план</a>
+      <a href="#months">Месяцы</a>
+      <a href="#check">Чек</a>
+      <a href="#lost">Пропавшие</a>
+      <a href="#managers">Менеджеры</a>
+      <a href="#falling">Чек по клиентам</a>
+    </nav>
+
+    <section id="vyvody" class="panel">
+      <p class="who">Магазин №11 целиком</p>
+      <h2>Книга живая, но дырявая. Рост сидит на одном ИП</h2>
+      <p class="sub">Это не Антипино: выручка 2026 не обвалилась, май — рекорд периода. Проблема другая: много старых контрагентов молчат, а живой оборот держит Малеев и один крупный ИП.</p>
+
+      <div class="banner">
+        <p class="banner-kicker">Диагноз</p>
+        <h2>Выручка 11,2 млн в 2024 → 10,9 в 2025 → 8,5 млн за неполный 2026. Живых 53 из 187.</h2>
+        <p>
+          Средний чек отгрузки +15% к 2024. Май 2026 — 1,71 млн, вдвое выше мая 2025.
+          Из 187 контрагентов 102 не покупали 180+ дней; значимых пропавших 33 на 3,9 млн.
+          ИП Нигматуллин — 10,2 млн за период, треть всей выручки магазина. Если он паузанет, точка просядет сразу.
+        </p>
+      </div>
+
+      <div class="actions">
+        <article class="action urgent">
+          <p class="who">Эта неделя · Малеев</p>
+          <h3>1. Дозвониться «уходящим»</h3>
+          <p>90–179 дней тишины. Ещё не 180 дней — клиент формально ваш. Нужны причина паузы, дата следующей отгрузки и что лежит в спецификации.</p>
+          <p class="hint">Приоритет: ИП Холмирзаев (371 тыс., 115 дней), Феррум, Ажур, СК Бикас.</p>
+        </article>
+        <article class="action">
+          <p class="who">Эта неделя · Малеев</p>
+          <h3>2. Вернуть значимых «пропавших»</h3>
+          <p>По регламенту ОМ: 180 дней без реализаций и заказов — можно перезакрепить, если сами не тянете. Сначала звонок «мы на связи», потом визит. Не оставлять карточку пустой.</p>
+          <p class="hint">СК Инжком, ИП Вологжанина, СК Сибстройград, Ветераны-пограничники, Горизонт. «Малеев ФЛ» в обзвон компаний не ставить.</p>
+        </article>
+        <article class="action">
+          <p class="who">Этот месяц · Малеев</p>
+          <h3>3. Защитить живых, кто стал мельче</h3>
+          <p>Они ещё ездят, но корзина сжалась. Это не «потеряли клиента», это теряем долю. Визит, разбор спецификации, комплект вместо россыпи — не скидка ради мелкого чека.</p>
+          <p class="hint">Теремъ, ИП Рогачев, Неострой, Промдорсервис, АДА-Плюс, ИП Ковалёв.</p>
+        </article>
+        <article class="action">
+          <p class="who">Система магазина</p>
+          <h3>4. Не держать треть выручки в одном ИП</h3>
+          <p>ИП Нигматуллин растёт и тянет 2026 вверх. Параллельно нужна вторая-третья опора из живых: Монолит, ИП Кунгуров, ИП Ерофеев, ИП Мусина. Раз в неделю из 1С — список «тишина 60+».</p>
+          <p class="hint">Касса не закрепляет ОМ. Чащина и Важенина — зал, их отгрузки не заменяют ведение книги Малеева.</p>
+        </article>
+      </div>
+
+      <div class="month-grid" style="margin-top:18px">
+        <div>
+          <h3 class="who">Спасать сейчас · 90–179 дней</h3>
+          <p class="sub">Ещё можно вернуть, не дожидаясь 180 дней.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Клиент</th>
+                  <th>Кто вёл</th>
+                  <th class="num">Было</th>
+                  <th class="num">Тишина</th>
+                </tr>
+              </thead>
+              <tbody id="act-leaving"></tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3 class="who">Перезакрепить или вернуть · 180+</h3>
+          <p class="sub">Значимые пропавшие Малеева. Новый контакт: «мы на связи, что нужно на объект».</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Клиент</th>
+                  <th class="num">Было</th>
+                  <th>Последняя</th>
+                </tr>
+              </thead>
+              <tbody id="act-gone"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <p class="note">«Малеев Алексей Сергеевич ФЛ» — личные отгрузки менеджера, в обзвон юрлиц не ставить. Интернет-магазин на Ларчиковой — не B2B-книга, в план возврата оптовиков не смешивать.</p>
+    </section>
+
+    <section id="months" class="panel">
+      <p class="who" style="margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p)">Выручка по месяцам</p>
+      <h2>Топ — май и июнь 2026. Дно — зимы, не «весь год»</h2>
+      <p class="sub">Пик периода — май 2026. Август 2024 остаётся сильным летним месяцем. Январи слабые каждый год. Август 2026 — по 19 число.</p>
+      <div class="legend-hint">
+        <span><i class="swatch" style="background:#4208a8"></i> обычный месяц</span>
+        <span><i class="swatch" style="background:#c81e3a"></i> топ-3</span>
+        <span><i class="swatch" style="background:#c4a000"></i> дно среди полных месяцев</span>
+        <span><i class="swatch" style="background:#c4b5e0"></i> неполный август 2026</span>
+      </div>
+      <div class="chart-box"><canvas id="revChart"></canvas></div>
+      <div class="month-grid">
+        <div class="month-card peak">
+          <h3>Топовые месяцы</h3>
+          <ul id="top-months"></ul>
+        </div>
+        <div class="month-card slump">
+          <h3>Упадочные месяцы</h3>
+          <ul id="low-months"></ul>
+        </div>
+      </div>
+      <p class="note" id="yoy-note"></p>
+    </section>
+
+    <section id="check" class="panel">
+      <p class="who" style="margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p)">Средний чек отгрузки</p>
+      <h2>По магазину чек вырос. У части клиентов — нет</h2>
+      <p class="sub">Сумма реализаций / число документов. Сравнение 2024 и 2026, плюс те же клиенты, кто покупал в оба года.</p>
+      <div class="chart-box short"><canvas id="checkChart"></canvas></div>
+      <p class="note" id="like-note"></p>
+    </section>
+
+    <section id="lost" class="panel">
+      <p class="who" style="margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p)">Кого возвращать</p>
+      <h2>Значимые пропавшие клиенты</h2>
+      <p class="sub">90+ дней без отгрузки и либо от 100 тыс. ₽ за период, либо от 3 документов. «Пропал» — 180 дней, как в регламенте основного менеджера.</p>
+      <div class="toolbar">
+        <label class="search">
+          <span class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden">Поиск</span>
+          <input id="lost-q" type="search" placeholder="Найти клиента или менеджера" autocomplete="off" />
+        </label>
+        <label class="filters">
+          <select id="lost-status">
+            <option value="">Все статусы</option>
+            <option value="пропал">Пропал · 180+ дней</option>
+            <option value="уходит">Уходит · 90–179 дней</option>
+          </select>
+        </label>
+        <p class="count" id="lost-count"></p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Клиент</th>
+              <th>Статус</th>
+              <th>Менеджер</th>
+              <th class="num">Выручка</th>
+              <th class="num">Отгрузок</th>
+              <th>Последняя</th>
+              <th class="num">Тишина</th>
+            </tr>
+          </thead>
+          <tbody id="lost-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="managers" class="panel">
+      <p class="who" style="margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p)">Кто кому продал</p>
+      <h2>Менеджер → клиент → сумма</h2>
+      <p class="sub">Малеев ведёт B2B-книгу. Чащина, Важенина, Ларчикова — зал и интернет, не замена ОМ. Нажмите карточку, чтобы открыть его клиентов.</p>
+      <div class="mgr-cards" id="mgr-cards"></div>
+      <div class="toolbar">
+        <label class="search">
+          <input id="mgr-q" type="search" placeholder="Клиент внутри выбранного менеджера" autocomplete="off" />
+        </label>
+        <p class="count" id="mgr-count"></p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Клиент</th>
+              <th class="num">Продал на</th>
+              <th class="num">Отгрузок</th>
+              <th>Последняя</th>
+            </tr>
+          </thead>
+          <tbody id="mgr-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="falling" class="panel">
+      <p class="who" style="margin:0 0 6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p)">Кто стал покупать мельче</p>
+      <h2>Клиенты, у которых чек просел</h2>
+      <p class="sub">Не меньше 4 отгрузок, вторая половина покупок слабее первой минимум на 15%.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Клиент</th>
+              <th>Менеджер</th>
+              <th class="num">Чек сначала</th>
+              <th class="num">Чек потом</th>
+              <th class="num">Дельта</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody id="fall-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot" id="foot"></footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
