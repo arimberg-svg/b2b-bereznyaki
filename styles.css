@@ -120,6 +120,8 @@ h1 {
 }
 
 h1 span { color: var(--brand); }
+h1 span.ok { color: var(--ok); }
+.answer.ok h2 { color: var(--ok); }
 
 .lede {
   margin: 0 0 18px;
